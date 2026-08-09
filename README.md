@@ -1,4 +1,4 @@
-# Folio
+# Personal Portofolio
 
 Aplikasi "Personal Portfolio Website" — situs showcase proyek pribadi. Ini
 adalah proyek referensi untuk Proyek Individu (dinilai per milestone) mata
@@ -19,8 +19,8 @@ tutorial minggu mana yang mengajarkan pola yang sama.
 ## Menjalankan proyek
 
 ```bash
-python3 -m venv .venv
-source .venv/bin/activate
+python3 -m venv env
+source env/bin/activate
 pip install -r requirements.txt
 python manage.py migrate
 python manage.py runserver
