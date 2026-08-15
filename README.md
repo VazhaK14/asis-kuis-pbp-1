@@ -1,6 +1,6 @@
 # Personal Portofolio
 
-Aplikasi "Personal Portfolio Website" — situs portofolio pribadi. Ini
+Aplikasi "Personal Portfolio Website" - situs portofolio pribadi. Ini
 adalah proyek referensi mata kuliah Pemrograman Berbasis Platform (PBP)
 untuk Tutorial dan Tugas mingguan, yang sekarang berbagi tema dan kode
 yang sama (bukan dua proyek terpisah).
