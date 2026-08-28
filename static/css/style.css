@@ -221,49 +221,34 @@ h1, .brand {
     margin-bottom: 2rem;
 }
 
-.timeline {
-    list-style: none;
-    max-width: 640px;
-    border-left: 2px solid var(--line);
+.experience-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
 }
 
-.timeline-entry {
-    position: relative;
-    padding: 0 0 2.25rem 2rem;
+.experience-card {
+    border: 1px solid var(--line);
+    border-top: 3px solid var(--accent);
+    border-radius: var(--radius);
+    padding: 1.5rem;
 }
 
-.timeline-entry:last-child {
-    padding-bottom: 0;
-}
-
-.timeline-entry::before {
-    content: "";
-    position: absolute;
-    left: -6.5px;
-    top: 0.3rem;
-    width: 11px;
-    height: 11px;
-    border-radius: 50%;
-    background-color: var(--accent);
-    border: 2px solid var(--paper);
-}
-
-.timeline-title {
+.experience-title {
     font-weight: 700;
     margin-bottom: 0.2rem;
 }
 
-.timeline-tags {
+.experience-tags {
     font-size: 0.8rem;
     color: var(--accent-dark);
     font-weight: 600;
     margin-bottom: 0.5rem;
 }
 
-.timeline-desc {
+.experience-desc {
     color: var(--text-muted);
     font-size: 0.9rem;
-    max-width: 520px;
 }
 
 /* footer */
@@ -290,5 +275,9 @@ h1, .brand {
 
     .social-links {
         justify-content: flex-start;
+    }
+
+    .experience-grid {
+        grid-template-columns: 1fr;
     }
 }
