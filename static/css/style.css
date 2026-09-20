@@ -21,8 +21,12 @@ body {
     line-height: 1.6;
 }
 
-h1, .brand {
-    font-family: "Space Grotesk", -apple-system, sans-serif;
+h1,
+.brand {
+    font-family:
+        "Space Grotesk",
+        -apple-system,
+        sans-serif;
 }
 
 .container {
@@ -207,48 +211,6 @@ h1, .brand {
     object-fit: cover;
     border-radius: var(--radius);
     border: 3px solid var(--ink);
-}
-
-/* experience */
-
-#experience {
-    padding: 3.5rem 1.5rem 4.5rem;
-}
-
-#experience h2 {
-    font-family: "Space Grotesk", -apple-system, sans-serif;
-    font-size: 1.8rem;
-    margin-bottom: 2rem;
-}
-
-.experience-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 1.5rem;
-}
-
-.experience-card {
-    border: 1px solid var(--line);
-    border-top: 3px solid var(--accent);
-    border-radius: var(--radius);
-    padding: 1.5rem;
-}
-
-.experience-title {
-    font-weight: 700;
-    margin-bottom: 0.2rem;
-}
-
-.experience-tags {
-    font-size: 0.8rem;
-    color: var(--accent-dark);
-    font-weight: 600;
-    margin-bottom: 0.5rem;
-}
-
-.experience-desc {
-    color: var(--text-muted);
-    font-size: 0.9rem;
 }
 
 /* footer */
