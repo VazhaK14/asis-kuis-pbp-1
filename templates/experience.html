@@ -25,15 +25,56 @@
     <main>
       <section class="experience-section" id="experience">
         <div class="container">
-          <p class="section-kicker">Perjalanan saya sejauh ini</p>
-          <h1>Experience</h1>
-
+          <div class="experience-header">
+            <div>
+              <p class="section-kicker">Perjalanan saya sejauh ini</p>
+              <h1>Experience</h1>
+            </div>
+            <div>
+              <a href="{% url 'main:create_experience' %}">
+                <button class="add-experience">tambah experience</button>
+              </a>
+            </div>
+          </div>
+          <div class="search-container">
+            <form
+              class="search-form"
+              action="{% url 'main:show_experience' %}"
+              method="get"
+            >
+              {% csrf_token %}
+              <input
+                class="search-input"
+                type="text"
+                name="title"
+                id="title"
+                value="{{ title_query }}"
+              />
+              <button class="search-button" type="submit">Cari</button>
+            </form>
+          </div>
+          <div class="category">
+            {% for category in experience_choices %}
+            <form action="{% url 'main:show_experience' %}" method="get">
+              {% csrf_token %}
+              <input
+                type="text"
+                name="category"
+                id="category"
+                value="{{ category }}"
+                style="display: none"
+              />
+              <button class="category-pil" type="submit">{{ category }}</button>
+            </form>
+            {% endfor %}
+          </div>
           <div class="experience-grid">
             {% for experience in experience_list %}
             <article class="experience-card">
               <span class="experience-category">
                 {{ experience.get_category_display }}
               </span>
+              <img src="{{ experience.thumbnail }}" alt="Gambar Pengalaman" />
               <h2>{{ experience.title }}</h2>
               <p class="experience-description">{{ experience.description }}</p>
 
@@ -42,6 +83,25 @@
               {% else %}
               <p class="experience-status">Selesai</p>
               {% endif %}
+
+              <div>
+                <div>
+                  <form
+                    method="post"
+                    action="{% url 'main:delete_experience' experience.id %}"
+                  >
+                    {% csrf_token %}
+                    <button value="{{ experience.id }}" type="submit">
+                      Delete Pengalaman
+                    </button>
+                  </form>
+                </div>
+                <div>
+                  <a href="{% url 'main:edit_experience' experience.id %}">
+                    <button class="add-experience">Edit Pengalaman</button>
+                  </a>
+                </div>
+              </div>
             </article>
             {% empty %}
             <p class="empty-state">Belum ada pengalaman yang ditambahkan.</p>
