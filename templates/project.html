@@ -34,54 +34,42 @@
 
         <div class="experience-grid">
           {% for project in project_list %}
-            <article class="experience-card">
+          <article class="experience-card">
+            {% if project.thumbnail %}
+            <img
+              src="{% static project.thumbnail %}"
+              alt="{{ project.title }}"
+              class="project-thumbnail"
+            />
+            {% endif %}
 
-              {% if project.thumbnail %}
-                <img
-                  src="{% static project.thumbnail %}"
-                  alt="{{ project.title }}"
-                  class="project-thumbnail"
-                />
-              {% endif %}
+            <p class="experience-title">{{ project.title }}</p>
 
-              <p class="experience-title">
-                {{ project.title }}
-              </p>
+            <p class="experience-tags">
+              ⭐ {{ project.stars }} stars {% if project.is_popular %} &middot;
+              Popular {% endif %}
+            </p>
 
-              <p class="experience-tags">
-                ⭐ {{ project.stars }} stars
+            <form action="{% url 'add_star' project.id %}" method="POST">
+              {% csrf_token %}
+              <button type="submit" class="star-button">⭐ Star</button>
+            </form>
 
-                {% if project.is_popular %}
-                  &middot; Popular
-                {% endif %}
-              </p>
+            <p class="experience-desc">{{ project.description }}</p>
 
-
-              <form action="{% url 'add_star' project.id %}" method="POST">
-                  {% csrf_token %}
-                  <button type="submit" class="star-button">
-                      ⭐ Star
-                  </button>
-              </form>
-
-              <p class="experience-desc">
-                {{ project.description }}
-              </p>
-
-              <p>
-                <a
-                  href="{{ project.url }}"
-                  class="social-link"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  View Project
-                </a>
-              </p>
-
-            </article>
+            <p>
+              <a
+                href="{{ project.url }}"
+                class="social-link"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                View Project
+              </a>
+            </p>
+          </article>
           {% empty %}
-            <p>No projects available.</p>
+          <p>No projects available.</p>
           {% endfor %}
         </div>
       </section>
@@ -94,4 +82,3 @@
     </footer>
   </body>
 </html>
-
