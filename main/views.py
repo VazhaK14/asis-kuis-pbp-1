@@ -9,3 +9,6 @@ def show_projects(request):
         "project_list": Projects.objects.all()
     }
     return render(request, 'project.html', context)
+
+def add_star(request):
+    return 

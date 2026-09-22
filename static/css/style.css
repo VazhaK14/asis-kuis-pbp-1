@@ -310,3 +310,24 @@ h1,
 .star-button:active {
     transform: translateY(0);
 }
+
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+    flex: 1;
+}
+
+.site-footer {
+    margin-top: auto;
+}

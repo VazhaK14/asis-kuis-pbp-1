@@ -1,3 +1,4 @@
+{% load static %}
 <!doctype html>
 <html lang="en">
   <head>
@@ -37,7 +38,7 @@
 
               {% if project.thumbnail %}
                 <img
-                  src="{{ project.thumbnail }}"
+                  src="{% static project.thumbnail %}"
                   alt="{{ project.title }}"
                   class="project-thumbnail"
                 />
