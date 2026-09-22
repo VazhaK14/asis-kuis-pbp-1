@@ -289,45 +289,73 @@ h1,
   }
 }
 
+.project-header {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  margin-top: 20px;
+}
+
+.create-project {
+  background-color: plum;
+  padding: 10px 5px 10px 5px;
+  color: white;
+}
+
+.project-buttons {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+}
+
+.delete-button {
+  background-color: red;
+  padding: 10px 5px 10px 5px;
+  color: white;
+}
+
 .star-button {
-    background: #111;
-    color: white;
-    border: none;
-    border-radius: 8px;
-    padding: 10px 16px;
-    font-family: 'Space Grotesk', sans-serif;
-    font-size: 14px;
-    font-weight: 700;
-    cursor: pointer;
-    transition: transform 0.15s ease, background 0.15s ease;
+  background: #111;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 16px;
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+  transition:
+    transform 0.15s ease,
+    background 0.15s ease;
 }
 
 .star-button:hover {
-    background: #333;
-    transform: translateY(-2px);
+  background: #333;
+  transform: translateY(-2px);
 }
 
 .star-button:active {
-    transform: translateY(0);
+  transform: translateY(0);
 }
-
 
 html,
 body {
-    height: 100%;
+  height: 100%;
 }
 
 body {
-    margin: 0;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
 main {
-    flex: 1;
+  flex: 1;
 }
 
 .site-footer {
-    margin-top: auto;
+  margin-top: auto;
 }

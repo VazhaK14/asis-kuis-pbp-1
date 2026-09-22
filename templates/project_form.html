@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="/static/css/style.css" />
+  </head>
+  <body>
+    <main>
+      <h1>Create A Project</h1>
+      <form action="{% url 'create_project' %}" method="post">
+        {% csrf_token %} {{ form }}
+        <button type="submit" value="Submit">Buat Project</button>
+      </form>
+    </main>
+  </body>
+</html>

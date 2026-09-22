@@ -16,12 +16,15 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from main.views import add_star, show_projects
+from main.views import add_star, show_projects, create_project, delete_project, edit_project
 from portofolio.views import landing_page
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', landing_page, name='landing_page'),
     path('projects/<uuid:project_id>/star/', add_star, name='add_star'),
-    path('projects/', show_projects, name="projects")
+    path('projects/', show_projects, name="projects"),
+    path('projects/create/', create_project, name="create_project"),
+    path('projects/<uuid:project_id>/edit/', edit_project, name="edit_project"),
+    path('projects/<uuid:project_id>/delete/', delete_project, name='delete_project'),
 ]

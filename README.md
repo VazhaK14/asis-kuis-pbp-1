@@ -11,5 +11,11 @@ Buatlah model `Projects` dengan ketentuan berikut:
 7. Mempunyai property `is_popular` yang akan bernilai true jika jumblah stars > 50
 8. Mempunyai fungsi `increment_stars` untuk menambah starsnya
 
-
 Gunakan template berikut, pastikan bahwa projects ditaruh di halaman yang berbeda dari landing page dan dapat diakses melalui navbar. Buatlah View yang berkaitan juga.
+
+## Form
+
+1. Menyelesaikan Star button
+2. Buat Form untuk bikin Project
+3. Buat Tombol untuk delete suatu project
+4. Buat tombol untuk edit suatu project
