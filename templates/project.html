@@ -32,12 +32,16 @@
       <section id="projects" class="container">
         <h2>Projects</h2>
 
+        <form accept="{% url 'projects' %}" method="get">
+          <input type="text" id="title" name="title" />
+          <button type="submit">Cari</button>
+        </form>
         <div class="experience-grid">
           {% for project in project_list %}
           <article class="experience-card">
             {% if project.thumbnail %}
             <img
-              src="{% static project.thumbnail %}"
+              src="{{ project.thumbnail }}"
               alt="{{ project.title }}"
               class="project-thumbnail"
             />
@@ -67,6 +71,16 @@
                 View Project
               </a>
             </p>
+
+            <a href="{% url 'edit_project' project.id%}">
+              {% csrf_token %}
+              <button>Edit Project</button>
+            </a>
+
+            <form action="{% url 'delete_project' project.id %}" method="post">
+              {% csrf_token %}
+              <button type="submit" value="Submit">Hapus Project</button>
+            </form>
           </article>
           {% empty %}
           <p>No projects available.</p>

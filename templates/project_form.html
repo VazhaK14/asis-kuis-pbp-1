@@ -14,6 +14,25 @@
     <link rel="stylesheet" href="/static/css/style.css" />
   </head>
   <body>
-    <form action="{% main:create_project %}" method="post"></form>
+    <main class="form-container">
+      <div class="form-div">
+        <h1>Create Project</h1>
+        <form
+          class="project-form"
+          action="{% url 'create_project' %}"
+          method="post"
+        >
+          {% csrf_token %} {% for field in form %}
+          <div class="field-container">
+            <label for="{{ field.id_for_label }}"> {{ field.label }}</label>
+            {{ field }}
+          </div>
+          {% endfor %}
+          <button class="form-button" type="submit" value="Submit">
+            Create Project
+          </button>
+        </form>
+      </div>
+    </main>
   </body>
 </html>
