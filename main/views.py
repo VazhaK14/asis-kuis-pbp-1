@@ -6,3 +6,12 @@ from main.models import Projects
 
 def add_star(request):
     return 
+
+def show_projects(request):
+    context = {
+        "project_list": Projects.objects.all()
+        
+    }
+    
+    return render(request, "project.html", context)
+
