@@ -12,4 +12,4 @@ Buatlah model `Projects` dengan ketentuan berikut:
 8. Mempunyai fungsi `increment_stars` untuk menambah starsnya
 
 
-Gunakan template tersebut, pastikan bahwa projects ditaruh di halaman yang berbeda dari landing page dan dapat diakses melalui navbar
+Gunakan template berikut, pastikan bahwa projects ditaruh di halaman yang berbeda dari landing page dan dapat diakses melalui navbar
